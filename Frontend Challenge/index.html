@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <!-- Include Tailwind CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Additional custom styles if needed -->
+    <style>
+         body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('background.jpeg') no-repeat center center;
+        background-size: cover;
+        opacity: 0.5; /* Adjust the opacity as needed */
+        z-index: -1;
+    }
+
+    /* This ensures the content stands out more over the background */
+    .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 5rem;
+    }
+    </style>
+</head>
+<body class="h-screen overflow-hidden">
+    <div class="content-wrapper">
+    <div class="max-w-md mx-auto">
+        <div class="bg-white bg-opacity-90 shadow-md rounded-lg p-6">
+            <div class="mb-4">
+                <h1 class="text-2xl font-semibold text-gray-700 text-center">My To-Do List</h1>
+            </div>
+            <div class="mb-4 flex">
+                <input type="text" id="task-input" placeholder="Add a new task"
+                       class="flex-grow p-2 border border-gray-300 rounded-l focus:outline-none">
+                <button id="add-task" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded-r">
+                    Add Task
+                </button>
+            </div>
+            <ul id="task-list" class="list-none space-y-2"></ul>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
